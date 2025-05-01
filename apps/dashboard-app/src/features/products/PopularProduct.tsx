@@ -4,7 +4,7 @@ import {
   PopularProductMock,
 } from "@/utils/mock-data/PopularProductsMock";
 import { useState } from "react";
-import { ProductsType } from "./types/Product.type";
+import { ProductsType } from "../../utils/types/Product.type";
 import { Card } from "antd";
 const PopularProduct = () => {
   const [currentPage, setCurrentPage] = useState(1);

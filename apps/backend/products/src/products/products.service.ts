@@ -27,10 +27,13 @@ export class ProductsService {
   async findAllProducts(
     page: number,
     limit: number,
+    category?: string,
   ): Promise<{ products: IProducts[]; total: number }> {
     const skip = (page - 1) * limit;
+    const query = category ? { category } : {};
+
     const [products, total] = await Promise.all([
-      this.productModel.find().skip(skip).limit(limit).exec(),
+      this.productModel.find(query).skip(skip).limit(limit).exec(),
       this.productModel.countDocuments().exec(),
     ]);
     if (!products || products.length === 0) {

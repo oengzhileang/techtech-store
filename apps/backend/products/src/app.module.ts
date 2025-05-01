@@ -10,7 +10,10 @@ import { ProductsModule } from './products/products.module';
 import { MongooseModule } from '@nestjs/mongoose';
 import { LoggerMiddleware } from './common/middlewares/logger.middleware';
 import { ConfigModule, ConfigService } from '@nestjs/config';
+import { ServeStaticModule } from '@nestjs/serve-static';
+import { join } from 'path';
 import databaseConfig from './config/configuration';
+
 @Module({
   imports: [
     ConfigModule.forRoot({
@@ -25,6 +28,10 @@ import databaseConfig from './config/configuration';
         ...(await configService.get('database.option')),
       }),
       inject: [ConfigService],
+    }),
+    ServeStaticModule.forRoot({
+      rootPath: join(__dirname, '..', 'uploads'), // Path to the uploads folder
+      serveRoot: '/uploads', // URL prefix for accessing images
     }),
     ProductsModule,
   ],

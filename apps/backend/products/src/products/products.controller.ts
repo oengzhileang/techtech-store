@@ -54,7 +54,7 @@ export class ProductsController {
     @UploadedFile() file: Express.Multer.File,
   ) {
     if (file) {
-      createProductDto.image = `/uploads/${file.filename}`;
+      createProductDto.image = `http://localhost:3000/uploads/${file.filename}`;
     }
     return this.productsService.create(createProductDto);
   }
@@ -66,6 +66,7 @@ export class ProductsController {
   async findAllProducts(
     @Query() query: PaginationQueryDto,
     @Res() response: Response,
+    @Query('category') category?: string,
   ): Promise<Response> {
     try {
       const page = Math.max(1, Number(query.page || 1));
@@ -73,6 +74,7 @@ export class ProductsController {
       const { products, total } = await this.productsService.findAllProducts(
         page,
         limit,
+        category,
       );
       const responseDto: ProductResponseDto = {
         message: 'Products Retrived successfully',

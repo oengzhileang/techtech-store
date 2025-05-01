@@ -29,6 +29,7 @@ const CreateProduct: React.FC<CreateProductProps> = ({
     form
       .validateFields()
       .then(async (values) => {
+        console.log("Form values:", values);
         const formData = new FormData();
         formData.append("image", values.image[0].originFileObj);
         formData.append("model", values.model);
@@ -43,11 +44,16 @@ const CreateProduct: React.FC<CreateProductProps> = ({
         }
 
         try {
-          await axios.post("http://localhost:3000/v1/products", formData, {
-            headers: {
-              "Content-Type": "multipart/form-data",
-            },
-          });
+          const response = await axios.post(
+            "http://localhost:3000/v1/products",
+            formData,
+            {
+              headers: {
+                "Content-Type": "multipart/form-data",
+              },
+            }
+          );
+          console.log("Api response:", response.data);
           message.success("Product created successfully");
           form.resetFields();
           onOk(); // Trigger parent callback to refresh or close modal

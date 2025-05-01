@@ -3,8 +3,7 @@ import SearchBox from "@/components/SearchBox";
 import { Button } from "antd";
 import CreateProduct from "@/features/products/CreateProduct";
 import ProductList from "@/features/products/ProductList";
-
-const Laptops = () => {
+const Products = () => {
   const [isModalVisible, setIsModalVisible] = useState(false);
 
   const showModal = () => {
@@ -25,8 +24,12 @@ const Laptops = () => {
       <h1 className="text-xl font-semibold">Desktops</h1>
       <div className="flex justify-between">
         <SearchBox placeholder="Search by model" />
-        <Button type="primary" onClick={showModal}>
-          New Product +
+        <Button
+          type="primary"
+          onClick={showModal}
+          className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded"
+        >
+          Add Product
         </Button>
       </div>
       <CreateProduct
@@ -39,4 +42,4 @@ const Laptops = () => {
   );
 };
 
-export default Laptops;
+export default Products;

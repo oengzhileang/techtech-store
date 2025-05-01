@@ -14,10 +14,10 @@ const Customers = () => {
   const [searchQuery, setSearchQuery] = useState("");
 
   // Handle search input
-  const handleSearch = (value: string) => {
-    setSearchQuery(value.trim()); // Update search query
-    setCurrentPage(1); // Reset to first page on new search
-  };
+  // const handleSearch = (value: string) => {
+  //   setSearchQuery(value.trim()); // Update search query
+  //   setCurrentPage(1); // Reset to first page on new search
+  // };
 
   const handlePageChange = (page: number, newPageSize?: number) => {
     setCurrentPage(page);
@@ -46,7 +46,6 @@ const Customers = () => {
         <SearchBox
           placeholder="Search by id"
           // onChange={(e) => setSearchQuery(e.target.value)}
-          onSearch={handleSearch}
         />
         <Button type="primary">New Customer +</Button>
       </div>

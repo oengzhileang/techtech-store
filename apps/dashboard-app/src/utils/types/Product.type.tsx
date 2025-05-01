@@ -6,6 +6,7 @@ export interface ProductsType {
   category: "Desktop" | "Laptop";
   price: number;
   stock: number;
+  sales?: number;
   status: "in stock" | "low stock" | "out of stock";
   createdAt?: string;
   updatedAt?: string;

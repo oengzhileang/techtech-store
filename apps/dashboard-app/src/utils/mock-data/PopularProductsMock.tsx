@@ -1,11 +1,11 @@
 // productColumns.ts
 import { Tag, TableColumnsType } from "antd";
 import macBookImage from "@/assets/images/mac_book.png";
-import { ProductsType } from "@/features/products/types/Product.type";
+import { ProductsType } from "@/utils/types/Product.type";
 export const columnsProductsMock: TableColumnsType<ProductsType> = [
   {
     title: "Id",
-    dataIndex: "key",
+    dataIndex: "_id",
   },
   {
     title: "Image",
@@ -13,7 +13,7 @@ export const columnsProductsMock: TableColumnsType<ProductsType> = [
     key: "image",
     render: (image: string) =>
       image ? (
-        <img src={image} alt="product" style={{ width: 50 }} />
+        <img src={image} alt="product" style={{ width: 40 }} />
       ) : (
         "No Image"
       ),
@@ -60,48 +60,53 @@ export const columnsProductsMock: TableColumnsType<ProductsType> = [
 
 export const PopularProductMock: ProductsType[] = [
   {
-    key: "1",
+    _id: "1",
     image: macBookImage,
     model: "MacBook Pro 14”",
     price: 1999.99,
-    sales: 120,
     stock: 12,
-    category: "Laptops",
+    sales: 120,
+    category: "Laptop",
+    status: "in stock",
   },
   {
-    key: "2",
+    _id: "2",
     image: macBookImage,
     model: "Gaming Laptop G15",
     price: 1499.99,
-    sales: 80,
     stock: 2,
-    category: "Laptops",
+    sales: 80,
+    category: "Laptop",
+    status: "low stock",
   },
   {
-    key: "3",
+    _id: "3",
     image: macBookImage,
     model: "HP Workstation Z2",
     price: 1199.99,
-    sales: 45,
     stock: 0,
-    category: "Desktops",
+    sales: 45,
+    category: "Desktop",
+    status: "out of stock",
   },
   {
-    key: "4",
+    _id: "4",
     image: macBookImage,
     model: "Lenovo All-in-One",
     price: 899.99,
-    sales: 33,
     stock: 5,
-    category: "Desktops",
+    sales: 33,
+    category: "Desktop",
+    status: "in stock",
   },
   {
-    key: "5",
+    _id: "5",
     image: macBookImage,
     model: "Dell OptiPlex Tower",
     price: 749.99,
-    sales: 60,
     stock: 8,
-    category: "Desktops",
+    sales: 60,
+    category: "Desktop",
+    status: "in stock",
   },
 ];
