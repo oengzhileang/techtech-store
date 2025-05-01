@@ -9,6 +9,7 @@
     "apps/backend/*"
   ],
   "scripts": {
+    "start:customers": "yarn workspace customers start:dev",
     "start:products": "yarn workspace products start:dev",
     "start:auth": "yarn workspace auth start:dev",
     "start:client": "yarn workspace client-app dev",
