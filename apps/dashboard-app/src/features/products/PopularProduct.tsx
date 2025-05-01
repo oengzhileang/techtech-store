@@ -34,6 +34,7 @@ const PopularProduct = () => {
       <div className="space-y-5">
         <h1 className="text-xl">Most Popular Products</h1>
         <Tabless
+          key="_id"
           columns={columnsProductsMock}
           data={paginatedData}
           currentPage={currentPage}

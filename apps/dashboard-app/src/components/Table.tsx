@@ -21,6 +21,7 @@ const Tabless = <T,>({
   totalItems,
 }: TablessProps<T>) => (
   <Table
+    rowKey="_id"
     className="overflow-auto h-full"
     columns={columns}
     dataSource={data}

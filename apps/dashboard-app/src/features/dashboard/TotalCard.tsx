@@ -8,7 +8,7 @@ interface TotalCardProps {
 }
 const TotalCard: React.FC<TotalCardProps> = (props) => (
   <Card style={{ padding: 0, borderRadius: 30, backgroundColor: "#e5e7eb" }}>
-    <div className="flex flex-col space-y-16">
+    <div className="flex flex-col space-y-20">
       <div className="flex justify-between">
         <p className="text-lg font-semibold text-slate-700">
           Total {props.title}

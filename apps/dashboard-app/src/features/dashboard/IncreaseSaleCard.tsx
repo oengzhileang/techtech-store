@@ -10,8 +10,8 @@ const IncreaseSaleCard = () => {
       }}
     >
       <div className="space-y-4">
-        <h1 className="text-2xl font-semibold">Increase Sale Card</h1>
-        <p className="text-lg">
+        <h1 className="text-3xl font-semibold">Increase Sale Card</h1>
+        <p className="text-xl">
           Discover the Proven Methods to Skyrocket Your Sales! Unleash the
           Potential of Your Business and Achieve Remarkable Growth. Whether
           you're a seasoned entrepreneur or just starting out
