@@ -6,7 +6,8 @@
   "private": true,
   "workspaces": [
     "apps/*",
-    "apps/backend/*"
+    "apps/backend/*",
+    "packages/*"
   ],
   "scripts": {
     "start:customers": "yarn workspace customers start:dev",
