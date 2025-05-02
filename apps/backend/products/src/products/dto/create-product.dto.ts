@@ -38,12 +38,12 @@ export class CreateProductDto {
   @IsNotEmpty()
   readonly stock: number;
 
-  @ApiProperty({
-    example: 'in stock',
-    required: true,
-    enum: ['in stock', 'low stock', 'out of stock'],
-  })
-  @IsString()
-  @IsNotEmpty()
-  readonly status: string;
+  // @ApiProperty({
+  //   example: 'in stock',
+  //   required: true,
+  //   enum: ['in stock', 'low stock', 'out of stock'],
+  // })
+  // @IsString()
+  // @IsNotEmpty()
+  // readonly status: string;
 }

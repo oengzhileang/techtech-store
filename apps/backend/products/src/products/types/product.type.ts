@@ -5,5 +5,5 @@ export interface IProducts extends Omit<Document, 'model'> {
   readonly category: string;
   readonly price: number;
   readonly stock: number;
-  readonly status: string;
+  readonly status?: string;
 }

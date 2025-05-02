@@ -16,8 +16,8 @@ export class Product {
   @Prop()
   stock: number;
 
-  @Prop({ enum: ['in stock', 'low stock', 'out of stock'] })
-  status: string;
+  // @Prop({ enum: ['in stock', 'low stock', 'out of stock'] })
+  // status: string;
 }
 
 export const ProductSchema = SchemaFactory.createForClass(Product);

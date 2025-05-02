@@ -1,6 +1,7 @@
 import { DeleteOutlined, EditOutlined, EyeOutlined } from "@ant-design/icons";
 import { Button, Image, Space, Tag } from "antd";
 import { ProductsType } from "../../utils/types/Product.type";
+
 export const columns = [
   {
     title: "Image",
@@ -32,12 +33,20 @@ export const columns = [
   },
   {
     title: "Status",
-    dataIndex: "status",
+    dataIndex: "stock", // Use stock as the data source
     key: "status",
-    render: (status: string) => {
+    render: (stock: number) => {
+      let status = "in stock";
       let color = "green";
-      if (status === "low stock") color = "orange";
-      else if (status === "out of stock") color = "red";
+
+      if (stock === 0) {
+        status = "out of stock";
+        color = "red";
+      } else if (stock <= 10) {
+        status = "low stock";
+        color = "orange";
+      }
+
       return <Tag color={color}>{status.toUpperCase()}</Tag>;
     },
   },
