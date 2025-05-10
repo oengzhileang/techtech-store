@@ -1,5 +1,5 @@
 // src/features/products/types/Product.type.ts
-export interface ProductsType {
+export interface IProducts {
   _id?: string;
   image?: string;
   model: string;

@@ -41,8 +41,8 @@ const items: MenuItem[] = [
   getItem("Products", "sub1", <ShopOutlined />, [
     getItem("Desktop", "2"),
     getItem("Laptop", "3"),
-    getItem("Mouse", "4"),
-    getItem("Keyboard", "5"),
+    // getItem("Mouse", "4"),
+    // getItem("Keyboard", "5"),
   ]),
   getItem("Transaction", "6", <FileOutlined />),
   getItem("Customers", "7", <TeamOutlined />),
@@ -73,8 +73,8 @@ const Layouttt = ({ children }: { children?: React.ReactNode }) => {
     "/": "1",
     "/products/desktops": "2",
     "/products/laptops": "3",
-    "/products/mouse": "4",
-    "/products/keyboard": "5",
+    // "/products/mouse": "4",
+    // "/products/keyboard": "5",
     "/transaction": "6",
     "/customers": "7",
     "/sale-report": "8",
@@ -105,12 +105,12 @@ const Layouttt = ({ children }: { children?: React.ReactNode }) => {
       case "3":
         navigate("/products/laptops");
         break;
-      case "4":
-        navigate("/products/mouse");
-        break;
-      case "5":
-        navigate("/products/keyboard");
-        break;
+      // case "4":
+      //   navigate("/products/mouse");
+      //   break;
+      // case "5":
+      //   navigate("/products/keyboard");
+      //   break;
       case "6":
         navigate("/transaction");
         break;
@@ -155,7 +155,9 @@ const Layouttt = ({ children }: { children?: React.ReactNode }) => {
         collapsed={collapsed}
         width={200}
       >
-        <h1 className="text-white p-3">General</h1>
+        <h1 className="text-white p-3 text-center text-xl font-semibold">
+          TechTech Store
+        </h1>
         <Menu
           onClick={onClick}
           theme="dark"

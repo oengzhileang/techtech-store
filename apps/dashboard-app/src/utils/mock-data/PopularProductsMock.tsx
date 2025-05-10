@@ -1,8 +1,8 @@
 // productColumns.ts
 import { Tag, TableColumnsType } from "antd";
 import macBookImage from "@/assets/images/mac_book.png";
-import { ProductsType } from "@/utils/types/Product.type";
-export const columnsProductsMock: TableColumnsType<ProductsType> = [
+import { IProducts } from "@/features/products/types/Product.type";
+export const columnsProductsMock: TableColumnsType<IProducts> = [
   {
     title: "Id",
     dataIndex: "_id",
@@ -58,7 +58,7 @@ export const columnsProductsMock: TableColumnsType<ProductsType> = [
   },
 ];
 
-export const PopularProductMock: ProductsType[] = [
+export const PopularProductMock: IProducts[] = [
   {
     _id: "1",
     image: macBookImage,

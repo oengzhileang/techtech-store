@@ -10,7 +10,6 @@ export class CreateProductDto {
   @ApiProperty({ example: 'image', required: false })
   @IsString()
   @IsEmpty()
-  @MaxLength(30)
   image: string;
 
   @ApiProperty({ example: 'model', required: true })

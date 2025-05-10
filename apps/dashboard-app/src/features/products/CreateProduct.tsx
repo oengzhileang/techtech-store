@@ -12,9 +12,10 @@ import {
 } from "antd";
 import { UploadOutlined } from "@ant-design/icons";
 import axios from "axios";
+import { IProducts } from "./types/Product.type";
 interface CreateProductProps {
   visible: boolean;
-  onOk: () => void;
+  onOk: (newProduct: IProducts) => void;
   onCancel: () => void;
 }
 
@@ -53,10 +54,11 @@ const CreateProduct: React.FC<CreateProductProps> = ({
               },
             }
           );
+          const newProduct: IProducts = response.data.data;
           console.log("Api response:", response.data);
           message.success("Product created successfully");
           form.resetFields();
-          onOk(); // Trigger parent callback to refresh or close modal
+          onOk(newProduct); // Trigger parent callback to refresh or close modal
         } catch (error) {
           message.error("Failed to create product");
           console.error("Create product error:", error);

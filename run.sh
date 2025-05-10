@@ -35,6 +35,7 @@ run_dashboard() {
 run_all() {
   echo "Starting all apps..."
   yarn run concurrently "yarn workspace products start:dev" \
+                        "yarn workspace customers start:dev" \
                         "yarn workspace dashboard-app dev"
 }
 
